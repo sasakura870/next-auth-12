@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 
 const Home: NextPage = () => {
   const { data: session, status } = useSession();
+  console.log(session)
 
   if (status === "loading") {
     return (
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className={styles.title}>Welcome {session?.user?.name}!!</h1>
+        <h1 className={styles.title}>Welcome {session?.user?.email}!!</h1>
       </main>
     </div>
   );
